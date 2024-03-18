@@ -1,0 +1,64 @@
+.card-carousel-container {
+    text-align: center;
+  }
+  
+  .card-carousel {
+    overflow: hidden;
+    box-shadow: 3px 3px 25px 1px lightsteelblue;
+  }
+ 
+ 
+  .carousel-card {
+    flex: 0 0 23%;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-card:hover{
+    transform: scale(1.10);
+  }
+
+  #button-color1{
+    background-image: linear-gradient(to right top, #00ff28, #eaff00, #90ff11, #0aff6c, #b0ff00);
+    border-color: black;
+    border-width: 1.5px;
+    border-radius: 15% 15% 15% 15%;
+  }
+  #button-color2{
+    background-image: linear-gradient(to right top, #00ff28, #eaff00, #90ff11, #0aff6c, #b0ff00);
+    border-color: black;
+    border-width: 1.5px;
+    border-radius: 15% 15% 15% 15%;
+  }
+  #price{
+    color: grey;
+    font-size: 20px;
+    margin-right: 60px;
+    color:#ffb300;
+  }
+#rupees{
+  margin-top: -63px;
+  margin-left: 15px;
+  font-size: 20px;
+}
+#title{
+  color: rgb(38, 11, 118);
+  font-size: 27px;
+}
+.heart-button{
+ color: rgb(255, 0, 111);
+}
+h3{
+  color: #ffbb00;
+  
+}
+h1{
+color:rgb(50, 16, 184);
+
+}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Roboto+Slab:wght@100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Protest+Riot&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Bad+Script&family=Balthazar&family=Protest+Riot&display=swap')
+ 
