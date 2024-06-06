@@ -18,16 +18,22 @@
   }
 
   #button-color1{
-    background-image: linear-gradient(to right top, #00ff28, #eaff00, #90ff11, #0aff6c, #b0ff00);
+    background-color:rgb(0, 0, 255);
     border-color: black;
     border-width: 1.5px;
     border-radius: 15% 15% 15% 15%;
   }
   #button-color2{
-    background-image: linear-gradient(to right top, #00ff28, #eaff00, #90ff11, #0aff6c, #b0ff00);
+    background-color:rgb(0, 0, 255);
     border-color: black;
     border-width: 1.5px;
     border-radius: 15% 15% 15% 15%;
+  }
+  #button-color1:hover{
+    background-color: #ffb300;
+  }
+  #button-color2:hover{
+    background-color: #ffb300;
   }
   #price{
     color: grey;

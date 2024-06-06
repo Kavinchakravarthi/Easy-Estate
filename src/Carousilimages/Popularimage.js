@@ -13,13 +13,12 @@ const cardData = [
   { id: 4, rupees:'$', price: '2000', title:'Rivestone..', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235843754.jpg?k=49110ec6827925f6c5f997059ae0fb1e0b6f8f63f925c61f180fe912ad552984&o=&hp=1' },
   { id: 5, rupees:'$', price: '5000', title:'Autumn mist...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235842148.jpg?k=41320938a9e6b3fb9a8117c1b1e8dd9585eade1f5da3b179fb57d7c2d7cdbee7&o=&hp=1' },
   { id: 6, rupees:'$', price: '6000', title:'Orange Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D' },
-  { id: 7, rupees:'$', price: '8000', title:'Rolling Hill...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.shutterstock.com/shutterstock/photos/2183226477/display_1500/stock-photo-vacation-couple-on-the-beach-near-swimming-pool-luxury-travel-2183226477.jpg' },
+  { id: 7, rupees:'$', price: '8000', title:'Rolling Hill...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/originals/ca/81/0d/ca810d11ee20315d8cd0c53c454cbe9a.jpg' },
   { id: 8, rupees:'$', price: '2000', title:'Golden field...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.cayugacollection.com/wp-content/uploads/2020/07/Master-Suite-1024x683.jpg' },
   { id: 9, rupees:'$', price: '2000', title:'Mordern Marve...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/380569812.jpg?k=0755f95e7361587eb7b9c9b79ea62d51b8dcef7cba1e3987daecd59e26daa42b&o=&hp=1' },
   { id: 10, rupees:'$', price: '3000', title:'Green Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/513565971.jpg?k=964fbc76f3bd30137eb7e6b629a2196ca49a6e59510a0908cc05857def71f1dc&o=&hp=1' },
 
 ];
-
 const Popularimage = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [displayCount, setDisplayCount] = useState(1);

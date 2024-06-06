@@ -16,7 +16,7 @@ const Title = () => {
         <Nav.Link href='/residencies'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Residencies</span></Nav.Link>
         <Nav.Link href='link'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Our Value</span></Nav.Link>
         <Nav.Link href='contact'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Contact Us</span></Nav.Link>
-        <Nav.Link href='service'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Get Started</span></Nav.Link>
+        <Nav.Link href='/success'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Addproperty</span></Nav.Link>
       </Nav>
       </Navbar.Collapse>
     </Container>

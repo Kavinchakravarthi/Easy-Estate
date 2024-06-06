@@ -9,6 +9,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Houses.css';
 
+
 const Houses = () => {
 
     const {e}=useParams(); 
@@ -28,7 +29,10 @@ const Houses = () => {
     };
 
     const handleBookButtonClick = () => {
-      alert("date is selected");
+      if(!alert("date is selected"))
+      {
+        setclick(false);
+      }
     };
 
   useEffect(() => {
@@ -92,7 +96,7 @@ const Houses = () => {
             Book your visit
             </Button>
             <Col>
-            {click &&
+            {click && 
             <div id="calendarcomponent">
               <Calendar  
               onChange={handleDateClick}
