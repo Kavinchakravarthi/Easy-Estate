@@ -2,16 +2,14 @@ import React from 'react'
 import {Button,Row,Col} from 'react-bootstrap';
 import Addimage from './Addimage';
 
-
 const Btnsuccess = ({Showcomponent=true,showbutton=true,ShowButton=true,ShowAddImage=true,ShowImage=true,btncolor}) => {
-  
 
   return (
     <div>
         <Row className='mt-5'>
           <div className="d-flex justify-content-center align-items-center">
 
-          <Button id="circle-button" style={{backgroundColor:btncolor}}>1</Button>  
+          <Button id="circle-button">1</Button>  
           <hr className="mx-2" style={{ borderColor: 'black' }} />
           <Button id="circle-button"  >2</Button>
           <hr className="mx-2" style={{ borderColor: 'black' }} />
@@ -23,7 +21,7 @@ const Btnsuccess = ({Showcomponent=true,showbutton=true,ShowButton=true,ShowAddI
           { Showcomponent && ShowImage && <Addimage />}
           {ShowButton && !Showcomponent && ShowAddImage &&  <Addimage/>}
           { showbutton && ShowImage && <Col className='text-center mt-5'>
-           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }} href='/upload'  >
+           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }} href='/upload' >
              Next Step  
            </Button>
            </Col>
