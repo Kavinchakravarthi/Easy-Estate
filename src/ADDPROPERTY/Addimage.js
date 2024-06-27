@@ -1,7 +1,7 @@
 import React from 'react';
 import './Addimage.css';
 import { useState} from 'react';
-import {Form,Button,Row,Col,} from 'react-bootstrap';
+import {Form,Row,Col,} from 'react-bootstrap';
 import { MapContainer,Marker,TileLayer } from 'react-leaflet';
 import Addproperties from '../ARRAYDATAS/addproperties.json';
 import L from 'leaflet';

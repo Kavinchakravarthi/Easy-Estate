@@ -38,6 +38,38 @@
     margin-left: 120px;
 }
 
+#newH2{
+    color: #ff0000;
+    margin-left: 130px;
+}
+
+#newH2:hover{
+ color: #51ff00;
+ cursor:pointer;
+}
+
+#login-color{
+    color: #5a5e57;
+}
+
+#siginup-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+#sigin-button{
+    background-color: #e50000;
+    border: 2px solid rgb(198, 192, 192);
+}
+
+
+#sigin-button:hover{
+    background-color: #1cde12;
+    color: #ffffff;
+    border: 2px solid rgb(198, 192, 192);
+    cursor: progress;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Protest+Riot&display=swap');

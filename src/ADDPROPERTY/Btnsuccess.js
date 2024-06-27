@@ -1,31 +1,48 @@
 import React from 'react'
-import {Button,Row,Col} from 'react-bootstrap';
+import {Button,Row,Col, ProgressBar} from 'react-bootstrap';
+import {useNavigate} from 'react-router-dom';
 import Addimage from './Addimage';
+import './Btnsuccess.css';
 
-const Btnsuccess = ({Showcomponent=true,showbutton=true,ShowButton=true,ShowAddImage=true,ShowImage=true,btncolor}) => {
+const Btnsuccess = ({
+  Showcomponent=true,
+  showbutton=true,
+  Showcomponent2=true,
+  showbutton2=true,
+  Showcomponent3=true,
+  Showbutton3=true ,
+  progress,
+  onNextStep
+ 
+}) => {
+
+ const navigate=useNavigate();
+
+
+ const handlenextstep=()=>{
+    onNextStep();
+    navigate('/upload');
+ }
+
 
   return (
     <div>
         <Row className='mt-5'>
-          <div className="d-flex justify-content-center align-items-center">
-
-          <Button id="circle-button">1</Button>  
-          <hr className="mx-2" style={{ borderColor: 'black' }} />
-          <Button id="circle-button"  >2</Button>
-          <hr className="mx-2" style={{ borderColor: 'black' }} />
-          <Button id="circle-button" >3</Button>
-          <hr className="mx-2"/>
-          <Button id="circle-button" >4</Button>
+          <Col>
+          <div className='d-flex justify-content-center' >
+          <ProgressBar now={progress} label={`${progress}%` }  id='progressbar'  variant='primary' animated />
           </div>
-          </Row> 
-          { Showcomponent && ShowImage && <Addimage />}
-          {ShowButton && !Showcomponent && ShowAddImage &&  <Addimage/>}
-          { showbutton && ShowImage && <Col className='text-center mt-5'>
-           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }} href='/upload' >
-             Next Step  
+          </Col>
+        </Row> 
+
+        {Showcomponent && Showcomponent2 && Showcomponent3 && <Addimage /> }
+          {showbutton && showbutton2 && Showbutton3 &&
+           <Col className='text-center mt-5'>
+           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }}   onClick={handlenextstep} >
+             Next Step
            </Button>
            </Col>
-          }
+}
            
     </div>
   

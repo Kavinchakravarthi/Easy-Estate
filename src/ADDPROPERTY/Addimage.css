@@ -8,6 +8,11 @@
         margin-left: 80px;
     }
 }
+@media (max-width:800px){
+    #mapxs{
+        margin-left: 70px;
+    }
+}
 @media (min-width:992px) {
     .total-center{
         margin-top: 130px;

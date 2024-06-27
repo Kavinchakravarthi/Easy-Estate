@@ -20,7 +20,7 @@ const Contact = () => {
                 <i class="bi bi-telephone-fill" id="icon"></i> CALL
                 <br></br>+91 999442211
                 </Card.Title>
-            <Button  className='ms-4 button-call'>CALL  NOW</Button>
+            <Button  className='ms-4 button-call fw-semibold'>CALL  NOW</Button>
             </Card.Body>
         </Card>
         </Col>
@@ -32,7 +32,7 @@ const Contact = () => {
                 <i class="bi bi-chat-text-fill"  id="icon"></i> CHAT
                 <br></br>+91 999442211
                 </Card.Title>
-            <Button className='ms-4 button-chat'>CALL  NOW</Button>
+            <Button className='ms-4 button-chat  fw-semibold'>CALL  NOW</Button>
             </Card.Body>
         </Card>
 
@@ -48,7 +48,7 @@ const Contact = () => {
                 <i class="bi bi-chat-left-dots-fill"  id="icon"></i> MESSAGE
                 <br></br>+91 999442211
                 </Card.Title>
-            <Button className='ms-4 button-message'>CALL  NOW</Button>
+            <Button className='ms-4 button-message  fw-semibold'>CALL  NOW</Button>
             </Card.Body>
         </Card>
         </Col>
@@ -60,7 +60,7 @@ const Contact = () => {
                 <i class="bi bi-camera-video-fill"  id="icon"></i> VEDIO CALL
                 <br></br>+91 999442211
                 </Card.Title>
-            <Button className='ms-4 button-vc'>CALL  NOW</Button>
+            <Button className='ms-4 button-vc  fw-semibold'>CALL  NOW</Button>
             </Card.Body>
         </Card>
         </Col>

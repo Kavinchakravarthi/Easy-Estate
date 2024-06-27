@@ -1,22 +1,23 @@
 import React from 'react';
 import './popularimage.css';
-import { Container, Row, Col, Card, Button} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button,Image} from 'react-bootstrap';
 import { useState, useEffect} from 'react';
 
 
 
 
 const cardData = [
-  { id: 1, rupees:'$', price: '2000', title:'Cedar Ridge...',content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.holidify.com/images/cmsuploads/compressed/266905214_20231017161531.jpg' },
-  { id: 2, rupees:'$', price: '10000', title:'Crimsen Peak', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/736x/fa/56/2d/fa562dea7a95cf59a11dcda3d71977d6.jpg' },
-  { id: 3, rupees:'$', price: '2000', title:'Summerhil E...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.hotelieracademy.org/wp-content/uploads/2018/12/nandini-main-1.jpg' },
-  { id: 4, rupees:'$', price: '2000', title:'Rivestone..', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235843754.jpg?k=49110ec6827925f6c5f997059ae0fb1e0b6f8f63f925c61f180fe912ad552984&o=&hp=1' },
-  { id: 5, rupees:'$', price: '5000', title:'Autumn mist...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235842148.jpg?k=41320938a9e6b3fb9a8117c1b1e8dd9585eade1f5da3b179fb57d7c2d7cdbee7&o=&hp=1' },
+  { id: 1, rupees:'$', price: '2000', title:'Wider Residence...',content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.holidify.com/images/cmsuploads/compressed/266905214_20231017161531.jpg' },
+  { id: 2, rupees:'$', price: '10000', title:'Green Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/736x/fa/56/2d/fa562dea7a95cf59a11dcda3d71977d6.jpg' },
+  { id: 3, rupees:'$', price: '2000', title:'Gost Residence...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.hotelieracademy.org/wp-content/uploads/2018/12/nandini-main-1.jpg' },
+  { id: 4, rupees:'$', price: '2000', title:'Orange Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235843754.jpg?k=49110ec6827925f6c5f997059ae0fb1e0b6f8f63f925c61f180fe912ad552984&o=&hp=1' },
+  { id: 5, rupees:'$', price: '5000', title:'Jhon Residence...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/235842148.jpg?k=41320938a9e6b3fb9a8117c1b1e8dd9585eade1f5da3b179fb57d7c2d7cdbee7&o=&hp=1' },
   { id: 6, rupees:'$', price: '6000', title:'Orange Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D' },
-  { id: 7, rupees:'$', price: '8000', title:'Rolling Hill...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/originals/ca/81/0d/ca810d11ee20315d8cd0c53c454cbe9a.jpg' },
-  { id: 8, rupees:'$', price: '2000', title:'Golden field...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.cayugacollection.com/wp-content/uploads/2020/07/Master-Suite-1024x683.jpg' },
-  { id: 9, rupees:'$', price: '2000', title:'Mordern Marve...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/380569812.jpg?k=0755f95e7361587eb7b9c9b79ea62d51b8dcef7cba1e3987daecd59e26daa42b&o=&hp=1' },
-  { id: 10, rupees:'$', price: '3000', title:'Green Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/513565971.jpg?k=964fbc76f3bd30137eb7e6b629a2196ca49a6e59510a0908cc05857def71f1dc&o=&hp=1' },
+  { id: 7, rupees:'$', price: '8000', title:'Pine View...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/originals/ca/81/0d/ca810d11ee20315d8cd0c53c454cbe9a.jpg' },
+  { id: 8, rupees:'$', price: '2000', title:'The Queen of Hills...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.cayugacollection.com/wp-content/uploads/2020/07/Master-Suite-1024x683.jpg' },
+  { id: 9, rupees:'$', price: '2000', title:'The King of Hills', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2077/content_amy_clay_artist_residency_1.jpg' },
+  { id: 10, rupees:'$', price: '3000', title:'Golden Palace...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/513565971.jpg?k=964fbc76f3bd30137eb7e6b629a2196ca49a6e59510a0908cc05857def71f1dc&o=&hp=1' },
+  { id:11,  rupees:'$', price: '9000', title:'Daimond House...',content:'We are the most expensive house we provide a safest and cleanest service here...',imageSrc:'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D'},
 
 ];
 const Popularimage = () => {
@@ -51,7 +52,7 @@ const Popularimage = () => {
     <Container className='mt-5'>
       <Row className="text-center">
         <Col xs={12} sm={3} md={3} className="order-1 order-sm-1 ">
-             <img
+             <Image
               src='https://eim.idoxgroup.com/wp-content/uploads/2022/01/PROLOGIS-Logo.png'
               className='img-fluid'
               id='popularimages1'
@@ -61,7 +62,7 @@ const Popularimage = () => {
          </Col>
 
             <Col xs={12} sm={3} md={3} className="mb-3 order-2 order-sm-2 mt-sm-2"> 
-            <img
+            <Image
               src='https://logowik.com/content/uploads/images/american-tower-corporation9094.logowik.com.webp'
               className='img-fluid'
               id='popularimages2'
@@ -71,7 +72,7 @@ const Popularimage = () => {
           </Col>
 
             <Col xs={12} sm={3} md={3} className="mb-3 order-4 order-sm-3 mt-sm-2">
-            <img
+            <Image
               src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE_A8OyQnNdHyr-RLdIma39CLSAaXycZqY3c80pjRUqA&s'
               className='img-fluid'
               id='popularimages3'
@@ -81,7 +82,7 @@ const Popularimage = () => {
           </Col>
 
             <Col xs={12} sm={3} md={3} className="mb-3 order-3 order-sm-4 mt-sm-3">
-            <img
+            <Image
               src='https://logowik.com/content/uploads/images/digital-realty9875.jpg'
               className='img-fluid'
               id='popularimages4'

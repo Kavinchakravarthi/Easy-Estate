@@ -9,7 +9,7 @@ transition: 0.5s ease;
   z-index: 2;
 }
 #cardtcolor{
-  color: rgb(8, 0, 255);
+  color: rgb(255, 0, 0);
 }
 @media (min-width: 768px) {
     #contactimage{
@@ -33,25 +33,25 @@ transition: 0.5s ease;
 }
 
 #icon{
-  color: rgb(248, 177, 0);
+  color: rgb(0, 0, 0);
+ 
 }
 
 .button-call{
-  background-color: rgb(0, 0, 228);
+  background-color: rgb(20, 20, 216);
  
 }
 .button-call:hover{
-  background-color:rgb(237, 190, 0);
-  border-color: black;
-  border-width: 2px;
+  background-color:rgb(255, 0, 0);
+  
 }
 .button-chat{
   background-color: rgb(0, 0, 228);
  
 }
 .button-chat:hover{
-  background-color:rgb(237, 190, 0);
-  border-color: black;
+  background-color:rgb(237, 0, 0);
+  border-color: rgb(157, 152, 152);
   border-width: 2px;
 }
 .button-message{
@@ -59,8 +59,8 @@ transition: 0.5s ease;
  
 }
 .button-message:hover{
-  background-color:rgb(237, 190, 0);
-  border-color: black;
+  background-color:rgb(237, 0, 0);
+  border-color: rgb(157, 152, 152);
   border-width: 2px;
 }
 .button-vc{
@@ -68,8 +68,8 @@ transition: 0.5s ease;
  
 }
 .button-vc:hover{
-  background-color:rgb(237, 190, 0);
-  border-color: black;
+  background-color:rgb(237, 0, 0);
+  border-color: rgb(157, 152, 152);
   border-width: 2px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');

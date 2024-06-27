@@ -2,11 +2,35 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container,Row,Col,Form,InputGroup,Button,Stack,Spinner} from "react-bootstrap";
 import { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Hometext.css";
 const Hometext = () => {
   const [count1,setcount1]=useState(5000);
   const [count2,setcount2]=useState(200);
   const [count3,setcount3]=useState(5000);
+  const navigate=useNavigate();
+
+  const handlechange=(e)=>{
+    const value=e.target.value;
+    const upper = value.toLowerCase();
+    if(upper=="ourvalue")
+      {
+      navigate('/ourvalue');
+      }
+    else if(upper=="residencies")
+      {
+        navigate('/residencies')
+      }
+      else if(upper=="contactus")
+        {
+          navigate('/contact')
+        }
+      else if(upper=="addproperty")
+        {
+          navigate('/success');
+        }
+  };
+
   useEffect(()=>{
     if(count1<10000)
     {
@@ -41,7 +65,7 @@ const Hometext = () => {
         <br></br>
 
           <InputGroup>
-          <Form.Control type='text' placeholder='search the button'/>
+          <Form.Control type='text' placeholder='search Residencies' onChange={handlechange}/>
           <Button variant='outline-warning' type='button'>Search</Button>
           </InputGroup>
           <br></br>    

@@ -1,7 +1,16 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Spinner} from 'react-bootstrap';
+import React, { useState }  from 'react';
+import { Container, Row, Col, Card, Button, Spinner, Offcanvas, OffcanvasHeader, OffcanvasTitle, OffcanvasBody} from 'react-bootstrap';
 import './Footer.css'
+
+
 const Footer = () => {
+ const [show,setshow]=useState(false);
+ const handleshow=()=>{
+  setshow(true);
+ }
+ const handleclose=()=>{
+  setshow(false);
+ }
   return (
     <>
     <Container fluid id="footercard">
@@ -17,7 +26,7 @@ const Footer = () => {
                     <br></br>
                     Find your residence soon</em>
                 </Card.Text>
-                <Button  style={{fontFamily: "Alegreya SC, serif"}} variant='outline-warning'>
+                <Button  style={{fontFamily: "Alegreya SC, serif"}} variant='outline-warning' onClick={handleshow}>
                     Get started
                 </Button>
                 </Card.Body>
@@ -25,6 +34,28 @@ const Footer = () => {
             </Col>
             </Row>
             </Container>
+
+           <Row>
+            <Col>
+              <Offcanvas show={show} onHide={handleclose} backdrop="static" keyboard={false} >
+                <OffcanvasHeader closeButton>
+                  <OffcanvasTitle >
+                    <div id='newH2'>
+                    <h2 style={{fontFamily: "Racing Sans One, sans-serif"}}>SING UP</h2>
+                    </div>
+                  </OffcanvasTitle>
+                </OffcanvasHeader>
+                <OffcanvasBody>
+                 <p className='fst-italic fw-semibold' id='login-color'>If you want to interact with us ? Then you have to singin first! and
+                   Then you join as a member of our website and starded making profit to your own properties or buy some properties of our client.</p>
+                <div id="siginup-button">
+                <Button style={{fontFamily: "Alegreya SC, serif"}} id='sigin-button' className='fw-semibold'>SIGN UP</Button>
+                </div>
+                </OffcanvasBody>
+                
+              </Offcanvas>
+            </Col>
+           </Row>
 
     <Container fluid>
       <Row>
@@ -39,12 +70,33 @@ const Footer = () => {
                     </h1>
                     
                   <br></br>
-                  <em style={{ fontFamily: "Balthazar, serif" }} className='fs-5'>our vision is to make all people <br></br> live their best</em>
+                  <em style={{ fontFamily: "Balthazar, serif" }} className='fs-5'>our vision is to make all people <br></br> live their best
+                  <br></br>
+                  State:Tamil Nadu
+                  <br></br>
+                  City:Coimbatore is Coimbaturing!
+                  <br></br>
+                  Providing 
+                  <br></br>
+                  We give the best Blog
+                  <br></br>
+                  No.1
+                  </em>
                 </Col>
                 <Col lg={6} xs={12} md={6} className='text-lg-end'>
                   <h1 id='h1c' style={{ fontFamily: "Racing Sans One, sans-serif" }}>Information</h1>
                   <br></br>
-                  <em style={{ fontFamily: "Balthazar, serif" }} className='fs-5'>155 new york,FL 4637, USA<br></br> live their best</em>
+                  <em style={{ fontFamily: "Balthazar, serif" }} className='fs-5'>155 new york,FL 4637, USA<br></br> live their best 
+                  <br></br>
+                  Personal Location
+                  <br></br>
+                  Country:India
+                  <br></br>
+                  Seamless Service
+                  <br></br>
+                  User Centric experience 
+                  <br></br>Immediate Respoonse 
+                  </em>
                 </Col>
               </Row>
             </Card.Body>

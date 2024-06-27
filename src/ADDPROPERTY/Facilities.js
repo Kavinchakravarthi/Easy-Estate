@@ -1,10 +1,17 @@
 import React from 'react';
 import {Row,Col,Form,Button} from 'react-bootstrap';
 import Btnsuccess from './Btnsuccess'; 
-const Facilities = () => {
+import { useNavigate } from 'react-router-dom';
+const Facilities = ({progress,onNextStep}) => {
+const  navigate=useNavigate();
+const handleclick=()=>{
+  onNextStep();
+  navigate('/facility');
+}
+
   return (
     <div>
-        <Btnsuccess Buttoncolor2={"rgb(0, 191, 0)"} ShowButton={false} ShowImage={false}/>
+        <Btnsuccess  Showcomponent3={false} Showbutton3={false} progress={progress}/>
         <Row >
             <Col className='d-flex justify-content-center mt-5'>
             <Form>
@@ -20,7 +27,7 @@ const Facilities = () => {
             </Col>
         </Row>
         <Col className='text-center mt-5'>
-           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }} href='/facility'>
+           <Button id="button-color" style={{ fontFamily: "Balthazar, serif" }}  onClick={handleclick}>
              Next Step  
            </Button>
            </Col>

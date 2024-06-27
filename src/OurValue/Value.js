@@ -1,6 +1,6 @@
 import React from 'react';
 import './Value.css';
-import { Container, Col, Row, Accordion, Stack, Ratio} from 'react-bootstrap';
+import { Container, Col, Row, Accordion,} from 'react-bootstrap';
 
 const Value = () => {
   return (
@@ -11,6 +11,7 @@ const Value = () => {
             <img
               src='https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cm9vbXxlbnwwfHwwfHx8MA%3D%3D'
               className='img-fluid border border-dark border-3  ms-lg-4 mt-sm-5 ' 
+              alt='nothing'
               id='value-image'
             />
             </Col>
