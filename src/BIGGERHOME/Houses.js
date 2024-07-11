@@ -95,6 +95,7 @@ const Houses = () => {
             >
             Book your visit
             </Button>
+            <Button variant='outline-warning '>Pay</Button>
             <Col>
             {click && 
             <div id="calendarcomponent">

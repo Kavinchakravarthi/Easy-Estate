@@ -41,15 +41,18 @@ const Footer = () => {
                 <OffcanvasHeader closeButton>
                   <OffcanvasTitle >
                     <div id='newH2'>
-                    <h2 style={{fontFamily: "Racing Sans One, sans-serif"}}>SING UP</h2>
+                    <h2 style={{fontFamily: "Racing Sans One, sans-serif"}}>SIGN UP</h2>
                     </div>
                   </OffcanvasTitle>
                 </OffcanvasHeader>
                 <OffcanvasBody>
-                 <p className='fst-italic fw-semibold' id='login-color'>If you want to interact with us ? Then you have to singin first! and
+                 <p className='fst-italic fw-semibold' id='login-color'>If you want to interact with us ? Then you have to signin first! and
                    Then you join as a member of our website and starded making profit to your own properties or buy some properties of our client.</p>
                 <div id="siginup-button">
-                <Button style={{fontFamily: "Alegreya SC, serif"}} id='sigin-button' className='fw-semibold'>SIGN UP</Button>
+                <Button style={{fontFamily: "Alegreya SC, serif"}} id='sigin-button' className='fw-semibold' href='/signup'>SIGNUP</Button>
+                </div>
+                <div id="login_button">
+                <Button style={{fontFamily: "Alegreya SC, serif"}}  className='fw-semibold' id="login-button" href='/login'>LOGIN</Button>
                 </div>
                 </OffcanvasBody>
                 

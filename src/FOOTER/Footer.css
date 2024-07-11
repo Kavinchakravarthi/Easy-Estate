@@ -71,6 +71,66 @@
     cursor: progress;
 }
 
+#login_button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#login-button{
+    background-color: #e50000;
+    border: 2px solid rgb(198, 192, 192);
+
+}
+#login-button:hover{
+    background-color: #1cde12;
+    color: #ffffff;
+    border: 2px solid rgb(198, 192, 192);
+    cursor: progress;
+}
+
+#video{
+    position:fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+@media (min-width: 576px){
+    #form{
+        display: flex;
+        justify-content: center;
+    }
+    }
+
+ #align{
+        margin-top: 14%;
+    }
+
+
+#button-border{
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #e20000;   
+}
+
+#button-border1{
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #e20000;   
+}
+
+@media (max-width:490px) {
+    #button-border{
+        border:2px solid black;
+    }
+}
+
+#button-border:hover{
+    background-color: #35bc00;
+}
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Protest+Riot&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Bad+Script&family=Balthazar&family=Protest+Riot&display=swap');

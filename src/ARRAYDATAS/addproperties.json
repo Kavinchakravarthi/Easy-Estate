@@ -1,13 +1,3 @@
     [
-        {"Id":1,"Title":"India","latitude":20.5937,"longitude":78.9629} ,
-        {"Id":2,"City":"Banglore","latitude1":12.9716,"longitude1":77.5946},
-        {"Id":3,"City":"tamilnadu","latitude1":13.0827,"longitude1":80.2707},
-        {"Id":4,"City":"Delhi","latitude1":28.6139,"longitude1":77.2090},
-        {"Id":5,"City":"Nagpur","latitude1":20.1937,"longitude1":78.9989},
-        {"Id":6,"City":"Aurangabad","latitude1":20.9937,"longitude1":78.9865},
-        {"Id":7,"City":"Nashik","latitude1":20.5837,"longitude1":78.9876},
-        {"Id":8,"City":"Jaipur","latitude1":26.9124,"longitude1":75.7873},
-        {"Id":9,"City":"Hydrabad","latitude1":17.3850,"longitude1":78.4867},
-        {"Id":10,"City":"Mumbai","latitude1":19.0760,"longitude1":72.8777}
-        
+        {"Id":1,"Title":"India","latitude":20.5937,"longitude":78.9629}
     ]

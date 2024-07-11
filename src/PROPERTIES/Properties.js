@@ -28,7 +28,7 @@ const handleclick=(e)=>{
 
   return (
     <div>
-        <Title/>
+        <Title />
         <Container fluid  className='mt-5'>
             <Row className='justify-content-center' >
                 <Col  xs={12} sm={8} md={6} lg={4}>

@@ -5,11 +5,17 @@ import Popularimage from '../Carousilimages/Popularimage'
 import Value from '../OurValue/Value'
 import Contact from '../CONTACT US/Contact'
 import Footer from '../FOOTER/Footer'
-
+import { useParams } from 'react-router-dom'
 
 
 
 const Mainroot = () => {
+ const {e}=useParams();
+ if(e)
+{
+ localStorage.setItem("p_name",e);
+}
+
   return (
     <div>
         <Title/>

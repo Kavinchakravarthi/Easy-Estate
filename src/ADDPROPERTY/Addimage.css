@@ -54,3 +54,21 @@ hr{
     background:black;
     width: 20%;
 }
+#movebutton{
+    margin-left: 140px;
+}
+@media (min-width:700px){
+    #movebutton{
+        margin-left: 140px;
+    }
+}
+@media (max-width:576px){
+    #movebutton{
+        margin-left: 0px;
+    }
+}
+@media (min-width:577px){
+    #movebutton{
+        margin-left: 140px;
+    }
+}
