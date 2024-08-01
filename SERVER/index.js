@@ -12,7 +12,7 @@ const residencyrouter = require("./ROUTES/residencyvalue");
 
 dotenv.config();
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://easy-estate.vercel.app/"],
     credentials: true
 }));
 app.use(express.json());
