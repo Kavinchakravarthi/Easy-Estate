@@ -188,7 +188,7 @@ var mailOptions = {
   from: nodetoemail,
   to: data.email,
   subject: 'Sending Link to Reset Password',
-  text: `http://localhost:3000/reset/${token}`,
+  text: `https://easy-estate.vercel.app/reset/${token}`,
 };
 
 transporter.sendMail(mailOptions, function(error, info){
