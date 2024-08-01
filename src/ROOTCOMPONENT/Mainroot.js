@@ -8,12 +8,11 @@ import Footer from '../FOOTER/Footer'
 import { useParams } from 'react-router-dom'
 
 
-
 const Mainroot = () => {
  const {e}=useParams();
  if(e)
 {
- localStorage.setItem("p_name",e);
+ sessionStorage.setItem("p_name",e);
 }
 
   return (

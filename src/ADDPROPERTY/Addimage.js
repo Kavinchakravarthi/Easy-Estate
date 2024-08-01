@@ -8,6 +8,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import Btnsuccess from './Btnsuccess';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -17,11 +18,14 @@ const Addimage = ({progress,onNextStep}) => {
   const[Center,setcenter]=useState({latitude:51.505,longitude: -0.09});
   const[latvalue,setlatvalue]=useState(0);
   const[longvalue,setlongvalue]=useState(0);
+  const[state,setstate]=useState(0);
+  const[country,setcountry]=useState(0);
   const navigate=useNavigate();
   
     
   const handlechange=(e)=>{
     const countryname=e.target.value;
+    setcountry(countryname);
     const countrydata=Addproperties.find((temp)=>temp.Title && temp.Title.toLowerCase()===countryname.toLowerCase());
     if(countrydata){
       setcenter({
@@ -33,6 +37,7 @@ const Addimage = ({progress,onNextStep}) => {
   
   const handlemarker=(e)=>{
     const cityname=e.target.value;
+    setstate(cityname);
   }
 
     const handlemouseover=(e)=>{
@@ -71,6 +76,12 @@ const Addimage = ({progress,onNextStep}) => {
     {
       onNextStep();
       navigate('/upload');
+      axios.post("http://localhost:8000/properties/house",{
+        country,
+        state,
+        latvalue,
+        longvalue,
+      })
     }
  }
 

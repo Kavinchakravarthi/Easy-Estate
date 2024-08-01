@@ -3,6 +3,7 @@ import { Form, Row, Col, Button,Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Upload.css';
 import Btnsuccess from './Btnsuccess';
+import axios from 'axios';
 
 const Upload = ({ progress, onNextStep }) => {
   const [url, setUrl] = useState(null);
@@ -12,6 +13,9 @@ const Upload = ({ progress, onNextStep }) => {
     e.preventDefault();
     const formvalue = e.currentTarget;
     if (formvalue.checkValidity() === true) {
+      axios.post("http://localhost:8000/properties/imageurl",{
+        url,
+      });
       onNextStep();
       navigate('/parentcomponent');
     }

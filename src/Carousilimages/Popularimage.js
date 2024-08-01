@@ -1,12 +1,12 @@
 import React from 'react';
 import './popularimage.css';
-import { Container, Row, Col, Card, Button,Image} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button,Image, Modal} from 'react-bootstrap';
 import { useState, useEffect} from 'react';
+import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 
 
-
-
-const cardData = [
+export const cardData = [
   { id: 1, rupees:'$', price: '2000', title:'Wider Residence...',content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.holidify.com/images/cmsuploads/compressed/266905214_20231017161531.jpg' },
   { id: 2, rupees:'$', price: '10000', title:'Green Cortage...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://i.pinimg.com/736x/fa/56/2d/fa562dea7a95cf59a11dcda3d71977d6.jpg' },
   { id: 3, rupees:'$', price: '2000', title:'Gost Residence...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://www.hotelieracademy.org/wp-content/uploads/2018/12/nandini-main-1.jpg' },
@@ -18,12 +18,18 @@ const cardData = [
   { id: 9, rupees:'$', price: '2000', title:'The King of Hills', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/2077/content_amy_clay_artist_residency_1.jpg' },
   { id: 10, rupees:'$', price: '3000', title:'Golden Palace...', content:'Massive opportunity to build your dream home at the base of mummy mountain in...',  imageSrc: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/513565971.jpg?k=964fbc76f3bd30137eb7e6b629a2196ca49a6e59510a0908cc05857def71f1dc&o=&hp=1' },
   { id:11,  rupees:'$', price: '9000', title:'Daimond House...',content:'We are the most expensive house we provide a safest and cleanest service here...',imageSrc:'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D'},
-
 ];
+
 const Popularimage = () => {
+  const [liked,setliked]=useState(0);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [displayCount, setDisplayCount] = useState(1);
+  const [models,setmodels] = useState(0);
+  const [close,setclose] = useState(false);
+  const emailvalue = sessionStorage.getItem("p_name");
+  const token = sessionStorage.getItem("token");
 
+  const navigate = useNavigate();
   const handleNext = () => {
     setCurrentCardIndex((prevIndex) => Math.min(prevIndex + 1, cardData.length - displayCount));
   };
@@ -45,7 +51,24 @@ const Popularimage = () => {
     };
   }, []);
 
- 
+ const handleclick = (id)=>{
+   axios.post("http://localhost:8000/Properties/likedvalue",{
+    id,emailvalue,token
+   }).then((res)=>{
+     if(res.data.err)
+     {
+      navigate("/login");
+     }
+     else{
+      setmodels("this property added to favorites");
+      setclose(true);
+     }
+   })
+ }
+  
+ const handleclose=()=>{
+  setclose(false);
+ }
 
   return (
     <>
@@ -97,6 +120,7 @@ const Popularimage = () => {
       <Col className={`mt-2 ${window.innerWidth < 576 ? 'text-center' : 'text-left'}`} xs={12} sm={12}>
       <h3><span style={{fontFamily: "Racing Sans One, sans-serif"}}>Best Choices</span></h3>
       <h1><span style={{fontFamily: "Racing Sans One, sans-serif"}}>Popular Residencies</span></h1>
+    
       </Col>
       </Row>
       </Container>
@@ -113,14 +137,25 @@ const Popularimage = () => {
         <Button onClick={handleNext} disabled={currentCardIndex === cardData.length - displayCount} id='button-color2' >
         <i class="bi bi-caret-right-fill"></i>
         </Button>
+
       </Col>
     </Row>
     
     <Row className="card-carousel">
+
+      <Modal show={close} onHide={handleclose} backdrop="static" keyboard={false} id="modal-color">
+        <Modal.Header closeButton>
+          <Modal.Title  style={{fontFamily: 'Alegreya SC,serif'}}>{models} 
+            <i class="bi bi-suit-heart-fill" 
+            style={{ position: 'absolute', top: 17, right:89 }}
+            ></i></Modal.Title>
+        </Modal.Header>
+      </Modal>
+      
       {cardData.slice(currentCardIndex, currentCardIndex + displayCount).map((card) => (
         <Col key={card.id} xs={12} sm={6} md={3}>
           <Card className="carousel-card " >
-          <Button variant="link" className="heart-button" style={{ position: 'absolute', top: 0, right: 0 }}>
+          <Button id="heart-button" size='lg' onClick={()=>handleclick(card.id)} style={{ position: 'absolute', top: 0, right: 0 }}>
           <i class="bi bi-suit-heart-fill"></i>
           </Button>
             <Card.Img variant="top" src={card.imageSrc} alt={`Image for ${card.content}`} className='img-fluid'/>

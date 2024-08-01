@@ -7,25 +7,68 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./title.css";
 import { Button, ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Title = () => {
   const [value,setvalue]=useState(false);
-  const a=localStorage.getItem("p_name");
+  let check;
+  let upper;
+  const a=sessionStorage.getItem("p_name");
   const namevalue=a || "";
-  const check=namevalue.charAt(0) || "";
-  const upper=check.toUpperCase();
+  check=namevalue.charAt(0) || "";
+  upper=check.toUpperCase();
   const navigate=useNavigate();
+
   
   useEffect(() => {
-    if (check) {
+    if (check !== "") {
       setvalue(true);
     }
   }, [check]);
   const handleclick=()=>{
-    localStorage.setItem("p_name","");
+    sessionStorage.setItem("p_name","");
+    sessionStorage.setItem("token","");
+    setvalue(false);
     navigate("/");
   }
+
+  const handlelogin=()=>{
+    const token = sessionStorage.getItem("token");
+    axios.post("http://localhost:8000/Properties/Addpropertytoken",{
+      token,
+    }).then((res)=>{
+      if(res.data.err)
+      {
+        navigate("/login");
+      }
+      else 
+      {
+        navigate("/addimage");
+      }
+    })
+  }
+
+  const handlebooking = ()=>{
+    const token = sessionStorage.getItem("token");
+    axios.post("http://localhost:8000/Properties/Addpropertytoken",{
+      token,
+    }).then((res)=>{
+      if(res.data.err)
+      {
+        navigate("/login");
+      }
+      else 
+      {
+        navigate("/booking");
+      }
+    })
+  }
+
+  const handlefavorites = ()=>{
+    navigate("/favorites");
+  }
+  
 
   return (
    <Navbar  expand="md"  data-bs-theme="dark" id='navbar'> 
@@ -37,10 +80,12 @@ const Title = () => {
         <Nav.Link href='/residencies'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Residencies</span></Nav.Link>
         <Nav.Link href='/ourvalue'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Our Value</span></Nav.Link>
         <Nav.Link href='/contact'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Contact Us</span></Nav.Link>
-        <Nav.Link href='/addimage'><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Addproperty</span></Nav.Link>
+        <Nav.Link ><span style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold' onClick={handlelogin}>Addproperty</span></Nav.Link>
        {value && <ButtonGroup>
-          <DropdownButton title={upper}>
-          <Dropdown.Item><Button onClick={handleclick}>logout</Button></Dropdown.Item>
+          <DropdownButton id="dropdown-button" title={upper} >
+          <Dropdown.Item><Nav.Link onClick={handlefavorites} style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold'>Favorites</Nav.Link></Dropdown.Item>
+          <Dropdown.Item><Nav.Link  style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold' onClick={handlebooking}>Booking</Nav.Link></Dropdown.Item>
+          <Dropdown.Item><Button onClick={handleclick}  style={{fontFamily: 'Alegreya SC,serif'}} className='fw-bold' id='logout-button'>logout</Button></Dropdown.Item>
           </DropdownButton>
         </ButtonGroup>
        }

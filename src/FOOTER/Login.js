@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {Form,Row,Col,Container, Button, Alert} from 'react-bootstrap';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Login = () => {
 
     const [email,setemail]=useState();
@@ -31,7 +32,7 @@ const Login = () => {
                     if(res.data.id===3)
                         {
                             const token=res.data.token;
-                            localStorage.setItem("token",token);
+                            sessionStorage.setItem("token",token);
                             navigate(`/home/${email}`);
                         }
                     else
@@ -85,6 +86,20 @@ const Login = () => {
                 className='text-uppercase' 
                 >Login</Button>
             </Form.Group>
+            <br></br>
+            <div className='d-flex justify-content-center'>
+            <Link to="/forgot" style={{fontFamily: "Alegreya SC, serif"}} >Forgot Password ?</Link>
+            </div>
+            <br></br>
+          {error.show && <Form.Group className='d-flex justify-content-center'>
+                <Button 
+                style={{fontFamily: "Alegreya SC, serif"}} 
+                id='button-border1'
+                className='text-uppercase'
+                href='/signup' 
+                >Signup</Button>
+            </Form.Group>
+          }
         </Form>
         </div>
        

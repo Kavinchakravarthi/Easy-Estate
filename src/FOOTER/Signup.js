@@ -32,7 +32,10 @@ const Signup = () => {
             }).then((res)=>{
                 if(res.data.id==2)
                     {
-                        navigate(`/home/${name}`);
+                        const token = res.data.token;
+                        sessionStorage.setItem("token",token);
+                        navigate(`/home/${email}`);
+                        
                     }
                     else
                     {

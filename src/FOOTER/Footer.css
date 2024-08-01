@@ -95,17 +95,42 @@
     z-index: -1;
 }
 
+
+#video-forgot{
+    position:fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+#video-reset{
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
 @media (min-width: 576px){
     #form{
         display: flex;
         justify-content: center;
     }
     }
+  
+
+    
 
  #align{
         margin-top: 14%;
     }
 
+    #align-forgot{
+        margin-top: 14%;    
+    }
+
+
+/* 
+    #button-forgot{
+        text-align: center;
+    } */
 
 #button-border{
     border: 2px solid white;
@@ -129,6 +154,49 @@
     background-color: #35bc00;
 }
 
+#align-reset
+{
+    margin-top: 170px;
+}
+
+@media (max-width:498px)
+{
+    #align-reset
+{
+    margin-top: 10px;
+}
+}
+@media (min-width:499px)
+{
+    #align-reset
+{
+    margin-top: 50px;
+}
+}
+
+@media (min-width:700px)
+{
+    #align-reset
+{
+    margin-top: 100px;
+}
+}
+
+@media (min-width:800px)
+{
+    #align-reset
+{
+    margin-top: 140px;
+}
+}
+
+@media (min-width:900px)
+{
+    #align-reset
+{
+    margin-top: 200px;
+}
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');

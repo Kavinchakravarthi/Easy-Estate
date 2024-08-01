@@ -44,7 +44,7 @@ const Hometext = () => {
     {
     setcount3(count3+1);
     }
-  })
+  });
   return (
   <Container fluid  id="bgcolorforhomepage">
     <Row >

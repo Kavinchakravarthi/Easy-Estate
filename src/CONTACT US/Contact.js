@@ -7,9 +7,10 @@ const Contact = () => {
     <Container fluid className='mt-5'>
     <h1 style={{fontFamily: "Racing Sans One, sans-serif"}} className='ms-lg-5'>Our Contact us</h1>
     <h3 style={{fontFamily: "Racing Sans One, sans-serif"}} className='ms-lg-5'>Easy Conatact Us</h3>
-    <p className='ms-lg-5'  style={{ fontFamily: "Balthazar, serif"}}>Lobecome wider than their parent add lightweight styles to them—all via classes
+    <p className='ms-lg-5'  style={{ fontFamily: "Balthazar, serif"}}>Navigating Current Market Trends in Real Estate
+    Understanding shifts in buyer preferences 
      <br></br>
-    wider than their parent add lightweight styles to 
+     Understanding shifts in buyer preferences and sustainability demands.
     </p>
        <Row>
         <Col xs={12} sm={4} md={3}>
